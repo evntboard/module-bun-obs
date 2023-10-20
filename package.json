@@ -1,0 +1,22 @@
+{
+  "name": "module_native_obs",
+  "module": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "bun src/index.js",
+    "build": "mkdir -p dist/ && bun build --compile ./src/index.js --outfile=dist/module_native_obs"
+  },
+  "devDependencies": {
+    "bun-types": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "json-rpc-2.0": "^1.6.0",
+    "lodash": "^4.17.21",
+    "obs-websocket-js": "^5.0.3",
+    "uuid": "^9.0.1",
+    "yargs-parser": "^21.1.1"
+  }
+}
