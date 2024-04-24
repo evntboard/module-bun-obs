@@ -2,10 +2,14 @@
   "name": "module-bun-obs",
   "module": "src/main.ts",
   "type": "module",
+  "scripts": {
+    "postinstall": "patch-package"
+  },
   "devDependencies": {
     "@types/bun": "latest",
     "@types/lodash": "^4.17.0",
-    "@types/uuid": "^9.0.8"
+    "@types/uuid": "^9.0.8",
+    "patch-package": "^8.0.0"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"

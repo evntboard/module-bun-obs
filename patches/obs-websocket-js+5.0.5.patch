@@ -1,0 +1,39 @@
+   diff --git a/node_modules/obs-websocket-js/dist/json.module.js b/node_modules/obs-websocket-js/dist/json.module.js
+index fca8224..4b8ef86 100644
+--- a/node_modules/obs-websocket-js/dist/json.module.js
++++ b/node_modules/obs-websocket-js/dist/json.module.js
+@@ -575,15 +575,6 @@ var BaseOBSWebSocket = /*#__PURE__*/function (_EventEmitter) {
+       _this8.socket.onerror = _this8.onError.bind(_this8);
+       _this8.socket.onclose = _this8.onClose.bind(_this8);
+       return Promise.resolve(connectionOpenedPromise).then(function () {
+-        var _this8$socket;
+-        var protocol = (_this8$socket = _this8.socket) == null ? void 0 : _this8$socket.protocol;
+-        // Browsers don't autoclose on missing/wrong protocol
+-        if (!protocol) {
+-          throw new OBSWebSocketError(-1, 'Server sent no subprotocol');
+-        }
+-        if (protocol !== _this8.protocol) {
+-          throw new OBSWebSocketError(-1, 'Server sent an invalid subprotocol');
+-        }
+         return helloPromise;
+       });
+     } catch (e) {
+diff --git a/node_modules/obs-websocket-js/dist/msgpack.modern.js b/node_modules/obs-websocket-js/dist/msgpack.modern.js
+index 4636acb..415f1d8 100644
+--- a/node_modules/obs-websocket-js/dist/msgpack.modern.js
++++ b/node_modules/obs-websocket-js/dist/msgpack.modern.js
+@@ -400,14 +400,6 @@ class BaseOBSWebSocket extends EventEmitter {
+     this.socket.onerror = this.onError.bind(this);
+     this.socket.onclose = this.onClose.bind(this);
+     await connectionOpenedPromise;
+-    const protocol = (_this$socket = this.socket) == null ? void 0 : _this$socket.protocol;
+-    // Browsers don't autoclose on missing/wrong protocol
+-    if (!protocol) {
+-      throw new OBSWebSocketError(-1, 'Server sent no subprotocol');
+-    }
+-    if (protocol !== this.protocol) {
+-      throw new OBSWebSocketError(-1, 'Server sent an invalid subprotocol');
+-    }
+     return helloPromise;
+   }
+   /**
